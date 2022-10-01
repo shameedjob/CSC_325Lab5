@@ -12,12 +12,19 @@ public class Senior extends Student{
 
     public Senior(String name, short age, int credits) {
         super(name, age, credits);
+        if(credits < 85)
+        {
+            //Seniors need to have atleast 85 credits
+            this.setCredits(85);
+        }
+        
     }
     
     
     @Override
     public String toString()
     {
+        //Outputs all of the data as a string but specifies that it is a Senior
         return String.format("%s, %s, Senior, %d, %f", getName(), getAddress(), getCredits(), getGpa());
     }
 }
